@@ -1,0 +1,15 @@
+"E:\arm\bin\armPROC.dll" 
+
+"E:\arm\bin\armLMIFTDI.dll" 
+
+"D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab Submissions\Embedded Project Final\Debug\Exe\Embedded Project Final Project.out" 
+
+--plugin="E:\arm\bin\armbat.dll" 
+
+--device_macro="E:\arm/config/debugger/TexasInstruments/TM4C123.dmac" 
+
+--flash_loader="E:\arm/config/flashloader/TexasInstruments/FlashTC4_H6_o.board" 
+
+
+
+

@@ -1,0 +1,110 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = E$:\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++E$:\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = E$:\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++E$:\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = E$:\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++E$:\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = E$:\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++E$:\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\calculator.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\calculator.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\DIO.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\DIO.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\keypad.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\keypad.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\LCD.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\LCD.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\main.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\main.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\stopwatch.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\stopwatch.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\timer.c" -xcl_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.xcl" -macro_file "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.tmp" -icc_path E$:\arm\bin\iccarm.exe
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\timer.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config E$:\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\tivaware_c_series_2_1_4_178\ -Ol --predef_macros "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.tmp"
+  rspfile_name = D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.xcl.rsp
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\calculator.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\DIO.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\keypad.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\LCD.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\main.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\stopwatch.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.pbi : INDEXER D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.xcl |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\timer.c
+  flags = "-out=D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.pbi" -f "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.xcl"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbw : MAKEBROWSE D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd
+  flags = "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd" -output "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbw"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi : PDBLINK D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.pbi |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.pbi $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.pbi
+  flags = -M "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\calculator.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\DIO.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\keypad.pbi"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi : PDBLINK D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.pbi |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.pbi $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.pbi
+  flags = -M "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\LCD.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\main.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\stopwatch.pbi"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi : PDBLINK D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.pbi
+  flags = -M "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\timer.pbi"
+
+build D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd : PDBLINK D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi |  $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi $
+D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi
+  flags = -M "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project.pbd" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part0.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part1.pbi" "D$:\CESS$ Semester$ 7\Introduction$ to$ Embedded$ Systems\IAR$ Lab$ Submissions\Embedded$ Project$ Final\Debug\BrowseInfo\Embedded$ Project$ Final$ Project_part2.pbi"
+

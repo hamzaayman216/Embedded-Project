@@ -1,0 +1,526 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  28/Dec/2022  21:29:15
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab
+#        Submissions\Embedded Project Final\Debug\Exe\Embedded Project Final
+#        Project.out
+#    Map file     =
+#        D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab
+#        Submissions\Embedded Project Final\Debug\List\Embedded Project Final
+#        Project.map
+#    Command line =
+#        -f "D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab
+#        Submissions\Embedded Project Final\Debug\Exe\Embedded Project Final
+#        Project.out.rsp" ("D:\CESS Semester 7\Introduction to Embedded
+#        Systems\IAR Lab Submissions\Embedded Project
+#        Final\Debug\Obj\calculator.o" "D:\CESS Semester 7\Introduction to
+#        Embedded Systems\IAR Lab Submissions\Embedded Project
+#        Final\Debug\Obj\DIO.o" "D:\CESS Semester 7\Introduction to Embedded
+#        Systems\IAR Lab Submissions\Embedded Project Final\Debug\Obj\keypad.o"
+#        "D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab
+#        Submissions\Embedded Project Final\Debug\Obj\LCD.o" "D:\CESS Semester
+#        7\Introduction to Embedded Systems\IAR Lab Submissions\Embedded
+#        Project Final\Debug\Obj\main.o" "D:\CESS Semester 7\Introduction to
+#        Embedded Systems\IAR Lab Submissions\Embedded Project
+#        Final\Debug\Obj\stopwatch.o" "D:\CESS Semester 7\Introduction to
+#        Embedded Systems\IAR Lab Submissions\Embedded Project
+#        Final\Debug\Obj\timer.o" --no_out_extension -o "D:\CESS Semester
+#        7\Introduction to Embedded Systems\IAR Lab Submissions\Embedded
+#        Project Final\Debug\Exe\Embedded Project Final Project.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab
+#        Submissions\Embedded Project Final\Debug\List\Embedded Project Final
+#        Project.map" --config
+#        E:\arm/config/linker/TexasInstruments/TM4C123GH6.icf --semihosting
+#        C:\ti\tivaware_c_series_2_1_4_178\driverlib\ewarm\Exe\driverlib.a
+#        --entry __iar_program_start --vfe --text_out locale --cpu=Cortex-M4
+#        --fpu=VFPv4_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Lt009]: Inconsistent wchar_t size
+            gpio.o(driverlib.a) and 4 other objects in driverlib.a have wchar_t
+                      size 16 bits
+            calculator.o and 128 other objects, some of them in m7M_tls.a and
+                      45 other libraries have wchar_t size 32 bits
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code          0x0    0x40  vector_table_M.o [5]
+                                   - 0x40    0x40
+
+"P1":                                      0x3d18
+  .text              ro code         0x40   0xe8e  xprintffull_nomb.o [2]
+  .text              ro code        0xece    0x2a  copy_init3.o [5]
+  .text              ro code        0xef8    0x16  strchr.o [5]
+  .text              ro code        0xf0e     0xa  xsprout.o [2]
+  .text              ro code        0xf18    0x40  xfail_s.o [2]
+  .text              ro code        0xf58    0x36  strlen.o [5]
+  .text              ro code        0xf8e     0x2  vectortrap_M.o [5]
+  .text              ro code        0xf90    0x58  memchr.o [5]
+  .text              ro code        0xfe8    0x76  ABImemcpy_unaligned.o [5]
+  .text              ro code       0x1060    0x70  frexp.o [4]
+  .text              ro code       0x10d0    0x34  DblCmpLe.o [4]
+  .text              ro code       0x1104    0x34  DblCmpGe.o [4]
+  .text              ro code       0x1138   0x13a  ldexp.o [4]
+  .text              ro code       0x1274    0x36  DblToS32.o [4]
+  .text              ro code       0x12ac    0x22  S32ToDbl.o [4]
+  .text              ro code       0x12d0   0x25e  DblAddSub.o [4]
+  .text              ro code       0x1530   0x246  DblDiv.o [4]
+  .text              ro code       0x1778    0x22  DblToU32.o [4]
+  .text              ro code       0x179c    0x1c  U32ToDbl.o [4]
+  .text              ro code       0x17b8   0x1aa  DblMul.o [4]
+  .text              ro code       0x1964   0x230  I64DivMod.o [5]
+  .text              ro code       0x1b94     0x6  abort.o [2]
+  .text              ro code       0x1b9c     0x2  I64DivZer.o [5]
+  .text              ro code       0x1ba0    0x14  exit.o [6]
+  .text              ro code       0x1bb4    0x7c  iarttio.o [6]
+  .text              ro code       0x1c30     0x8  XShttio.o [2]
+  .text              ro code       0x1c38   0x3cc  gpio.o [3]
+  .text              ro code       0x2004    0xa0  interrupt.o [3]
+  .text              ro code       0x20a4   0x36a  strto64.o [4]
+  .text              ro code       0x240e   0x120  iar_Stopfx.o [2]
+  .text              ro code       0x2530   0x1a8  iar_Stoflt.o [2]
+  .text              ro code       0x26d8   0x20c  iar_Stoxflt.o [2]
+  .text              ro code       0x28e4   0x264  stopwatch.o [1]
+  .text              ro code       0x2b48   0x1bc  timer.o [3]
+  .text              ro code       0x2d04   0x1b8  LCD.o [1]
+  .text              ro code       0x2ebc    0x28  printf.o [2]
+  .text              ro code       0x2ee4   0x1f0  sysctl.o [3]
+  .text              ro code       0x30d4    0x48  DIO.o [1]
+  .text              ro code       0x311c    0x14  memset.o [5]
+  .text              ro code       0x3130    0x40  sprintf.o [2]
+  .text              ro code       0x3170    0x48  FltToDbl.o [4]
+  .text              ro code       0x31b8    0x66  ABImemset.o [5]
+  .text              ro code       0x3220   0x1a4  calculator.o [1]
+  .text              ro code       0x33c4    0x28  strncat.o [2]
+  .text              ro code       0x33ec   0x104  keypad.o [1]
+  .text              ro code       0x34f0     0xe  math_wrappers64.o [4]
+  .text              ro code       0x3500    0x68  DblToFlt.o [4]
+  .text              ro code       0x3568   0x1a4  timer.o [1]
+  .text              ro code       0x370c   0x198  main.o [1]
+  .text              ro code       0x38a4   0x152  iar_Stoulx.o [2]
+  .rodata            const         0x39f8    0x50  iar_Stoulx.o [2]
+  .rodata            const         0x3a48    0x48  strto64.o [4]
+  .text              ro code       0x3a90    0x38  zero_init3.o [5]
+  .text              ro code       0x3ac8    0x28  data_init.o [5]
+  .text              ro code       0x3af0    0x22  fpinit_M.o [4]
+  .text              ro code       0x3b12    0x22  iarwrite.o [6]
+  .iar.init_table    const         0x3b34    0x24  - Linker created -
+  .text              ro code       0x3b58    0x20  putchar.o [2]
+  .text              ro code       0x3b78    0x10  write.o [6]
+  .text              ro code       0x3b88    0x1e  dwrite.o [6]
+  .text              ro code       0x3ba6    0x20  iarwstd.o [6]
+  .text              ro code       0x3bc8    0x1e  cmain.o [5]
+  .text              ro code       0x3be6     0x4  low_level_init.o [2]
+  .text              ro code       0x3bea     0x4  exit.o [2]
+  .text              ro code       0x3bf0     0xa  cexit.o [5]
+  .text              ro code       0x3bfc    0x1c  cstartup_M.o [5]
+  Initializer bytes  const         0x3c18    0x18  <for P2-1>
+  .text              ro code       0x3c30    0x16  xprout.o [2]
+  .rodata            const         0x3c46    0x14  calculator.o [1]
+  .rodata            const         0x3c5a    0x14  calculator.o [1]
+  .rodata            const         0x3c6e    0x14  main.o [1]
+  .rodata            const         0x3c82    0x14  main.o [1]
+  .rodata            const         0x3c98    0x10  calculator.o [1]
+  .rodata            const         0x3ca8    0x10  calculator.o [1]
+  .rodata            const         0x3cb8    0x10  main.o [1]
+  .rodata            const         0x3cc8    0x10  main.o [1]
+  .rodata            const         0x3cd8    0x10  main.o [1]
+  .rodata            const         0x3ce8    0x10  main.o [1]
+  .rodata            const         0x3cf8    0x10  stopwatch.o [1]
+  .rodata            const         0x3d08    0x10  stopwatch.o [1]
+  .rodata            const         0x3d18    0x10  timer.o [1]
+  .rodata            const         0x3d28    0x10  timer.o [1]
+  .rodata            const         0x3d38     0xc  LCD.o [1]
+  .rodata            const         0x3d44     0xc  main.o [1]
+  .rodata            const         0x3d50     0x8  calculator.o [1]
+  .rodata            const         0x3d58     0x0  zero_init3.o [5]
+  .rodata            const         0x3d58     0x0  copy_init3.o [5]
+                                 - 0x3d58  0x3d18
+
+"P2", part 1 of 3:                           0x18
+  P2-1                        0x2000'0000    0x18  <Init block>
+    .data            inited   0x2000'0000    0x10  keypad.o [1]
+    .data            inited   0x2000'0010     0x8  XShttio.o [2]
+                            - 0x2000'0018    0x18
+
+"P2", part 2 of 3:                          0x65c
+  VTABLE             zero     0x2000'0400   0x26c  interrupt.o [3]
+  .bss               zero     0x2000'066c     0x4  stopwatch.o [1]
+  .bss               zero     0x2000'0670     0x4  xfail_s.o [2]
+                            - 0x2000'0674   0x65c
+
+"P2", part 3 of 3:                         0x1000
+  CSTACK                      0x2000'0678  0x1000  <Block>
+    CSTACK           uninit   0x2000'0678  0x1000  <Block tail>
+                            - 0x2000'1678  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x3d58     0x3'ffff  0x3'c2a8
+  0x2000'0674  0x2000'0677       0x4
+  0x2000'1678  0x2000'7fff    0x6988
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x274:
+          0x2000'0400  0x274
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x18:
+               0x3c18   0x18
+    1 destination range, total size 0x18:
+          0x2000'0000   0x18
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+command line/config:
+    ------------------------------------------------
+    Total:
+
+D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab Submissions\Embedded Project Final\Debug\Obj: [1]
+    DIO.o                       72
+    LCD.o                      440       12
+    calculator.o               420       80
+    keypad.o                   260       16       16
+    main.o                     408      116
+    stopwatch.o                612       32        4
+    timer.o                    420       32
+    ------------------------------------------------
+    Total:                   2'632      288       20
+
+dl7M_tln.a: [2]
+    XShttio.o                    8        8        8
+    abort.o                      6
+    exit.o                       4
+    iar_Stoflt.o               424
+    iar_Stopfx.o               288
+    iar_Stoulx.o               338       80
+    iar_Stoxflt.o              524
+    low_level_init.o             4
+    printf.o                    40
+    putchar.o                   32
+    sprintf.o                   64
+    strncat.o                   40
+    xfail_s.o                   64                 4
+    xprintffull_nomb.o       3'726
+    xprout.o                    22
+    xsprout.o                   10
+    ------------------------------------------------
+    Total:                   5'594       88       12
+
+driverlib.a: [3]
+    gpio.o                     972
+    interrupt.o                160               620
+    sysctl.o                   496
+    timer.o                    444
+    ------------------------------------------------
+    Total:                   2'072               620
+
+m7M_tls.a: [4]
+    DblAddSub.o                606
+    DblCmpGe.o                  52
+    DblCmpLe.o                  52
+    DblDiv.o                   582
+    DblMul.o                   426
+    DblToFlt.o                 104
+    DblToS32.o                  54
+    DblToU32.o                  34
+    FltToDbl.o                  72
+    S32ToDbl.o                  34
+    U32ToDbl.o                  28
+    fpinit_M.o                  34
+    frexp.o                    112
+    ldexp.o                    314
+    math_wrappers64.o           14
+    strto64.o                  874       72
+    ------------------------------------------------
+    Total:                   3'392       72
+
+rt7M_tl.a: [5]
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    I64DivMod.o                560
+    I64DivZer.o                  2
+    cexit.o                     10
+    cmain.o                     30
+    copy_init3.o                42
+    cstartup_M.o                28
+    data_init.o                 40
+    memchr.o                    88
+    memset.o                    20
+    strchr.o                    22
+    strlen.o                    54
+    vector_table_M.o            64
+    vectortrap_M.o               2
+    zero_init3.o                56
+    ------------------------------------------------
+    Total:                   1'238
+
+shb_l.a: [6]
+    dwrite.o                    30
+    exit.o                      20
+    iarttio.o                  124
+    iarwrite.o                  34
+    iarwstd.o                   32
+    write.o                     16
+    ------------------------------------------------
+    Total:                     256
+
+    Gaps                        32        4    1'000
+    Linker created                       36    4'096
+----------------------------------------------------
+    Grand Total:            15'216      488    5'748
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base        0x3b34          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x3b58          --   Gb  - Linker created -
+?main                        0x3bc9         Code  Gb  cmain.o [5]
+BusFault_Handler              0xf8f         Code  Wk  vectortrap_M.o [5]
+CSTACK$$Base            0x2000'0678          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1678          --   Gb  - Linker created -
+DIO_ClearPort                0x3117    0x6  Code  Gb  DIO.o [1]
+DIO_ReadPin                  0x3101   0x12  Code  Gb  DIO.o [1]
+DIO_ReadPort                 0x3113    0x4  Code  Gb  DIO.o [1]
+DIO_WritePin                 0x30d5   0x2c  Code  Gb  DIO.o [1]
+DebugMon_Handler              0xf8f         Code  Wk  vectortrap_M.o [5]
+Dtentox                      0x20a5  0x1e0  Code  Lc  strto64.o [4]
+GPIODirModeSet               0x1c79   0x28  Code  Gb  gpio.o [3]
+GPIOIntClear                 0x1df1    0x6  Code  Gb  gpio.o [3]
+GPIOIntEnable                0x1deb    0x6  Code  Gb  gpio.o [3]
+GPIOIntRegisterPin           0x1df7   0x16  Code  Gb  gpio.o [3]
+GPIOIntTypeSet               0x1ca1   0x4c  Code  Gb  gpio.o [3]
+GPIOPadConfigSet             0x1ced   0xfe  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOInput         0x1e1f   0x14  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOOutput        0x1e33    0xa  Code  Gb  gpio.o [3]
+GPIOPinWrite                 0x1e15    0x6  Code  Gb  gpio.o [3]
+HardFault_Handler             0xf8f         Code  Wk  vectortrap_M.o [5]
+IntEnable                    0x202b   0x56  Code  Gb  interrupt.o [3]
+IntRegister                  0x2005   0x26  Code  Gb  interrupt.o [3]
+KeyPad_Init                  0x33ed   0x38  Code  Gb  keypad.o [1]
+Keypad_read                  0x3425   0xac  Code  Gb  keypad.o [1]
+LCD_command                  0x2d6f   0x36  Code  Gb  LCD.o [1]
+LCD_data                     0x2da5   0x24  Code  Gb  LCD.o [1]
+LCD_init                     0x2d05   0x6a  Code  Gb  LCD.o [1]
+LCD_printFloat               0x2e37   0x46  Code  Gb  LCD.o [1]
+LCD_printInt_Timer_Stopwatch
+                             0x2df9   0x3e  Code  Gb  LCD.o [1]
+LCD_printString              0x2ea5   0x18  Code  Gb  LCD.o [1]
+MemManage_Handler             0xf8f         Code  Wk  vectortrap_M.o [5]
+NMI_Handler                   0xf8f         Code  Wk  vectortrap_M.o [5]
+PendSV_Handler                0xf8f         Code  Wk  vectortrap_M.o [5]
+PeriodTosec                  0x28e5    0xc  Code  Gb  stopwatch.o [1]
+PeriodTosecTimer             0x3569    0xc  Code  Gb  timer.o [1]
+Region$$Table$$Base          0x3b34          --   Gb  - Linker created -
+Region$$Table$$Limit         0x3b58          --   Gb  - Linker created -
+SVC_Handler                   0xf8f         Code  Wk  vectortrap_M.o [5]
+SysCtlClockGet               0x2f29  0x110  Code  Gb  sysctl.o [3]
+SysCtlDelay                  0x2f21    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralEnable       0x2f05    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralReady        0x2ee5    0x8  Code  Gb  sysctl.o [3]
+SysTick_Handler               0xf8f         Code  Wk  vectortrap_M.o [5]
+Timer0_ISR                   0x291d   0x14  Code  Gb  stopwatch.o [1]
+Timer0_ISR_Timer             0x359d   0x34  Code  Gb  timer.o [1]
+Timer1_ISR                   0x28f1   0x2c  Code  Gb  stopwatch.o [1]
+Timer1_ISR_Timer             0x3575   0x28  Code  Gb  timer.o [1]
+TimerConfigure               0x2ba3   0x52  Code  Gb  timer.o [3]
+TimerDisable                 0x2b97    0xc  Code  Gb  timer.o [3]
+TimerEnable                  0x2b8b    0xc  Code  Gb  timer.o [3]
+TimerIntClear                0x2c5f    0x4  Code  Gb  timer.o [3]
+TimerIntDisable              0x2c53    0x4  Code  Gb  timer.o [3]
+TimerIntEnable               0x2c49    0x4  Code  Gb  timer.o [3]
+TimerIntRegister             0x2c2f   0x1a  Code  Gb  timer.o [3]
+TimerLoadSet                 0x2c05   0x10  Code  Gb  timer.o [3]
+TimerLoadSet64               0x2c15    0x6  Code  Gb  timer.o [3]
+TimerValueGet64              0x2c1b   0x14  Code  Gb  timer.o [3]
+UsageFault_Handler            0xf8f         Code  Wk  vectortrap_M.o [5]
+_GPIOIntNumberGet            0x1c39   0x40  Code  Lc  gpio.o [3]
+_LC                            0x41    0x6  Code  Lc  xprintffull_nomb.o [2]
+_LitobFullNoMb                0xcd1  0x114  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb                0x47  0xc76  Code  Gb  xprintffull_nomb.o [2]
+_Prout                       0x3c31   0x16  Code  Gb  xprout.o [2]
+_PutcharsFullNoMb             0xe3d   0x2e  Code  Lc  xprintffull_nomb.o [2]
+_SProut                       0xf0f    0xa  Code  Gb  xsprout.o [2]
+_TimerIntNumberGet           0x2b49   0x42  Code  Lc  timer.o [3]
+__aeabi_cdcmple              0x10d1         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple             0x1105         Code  Gb  DblCmpGe.o [4]
+__aeabi_d2f                  0x3501         Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz                 0x1275         Code  Gb  DblToS32.o [4]
+__aeabi_d2uiz                0x1779         Code  Gb  DblToU32.o [4]
+__aeabi_dadd                 0x12d1         Code  Gb  DblAddSub.o [4]
+__aeabi_ddiv                 0x1531         Code  Gb  DblDiv.o [4]
+__aeabi_dmul                 0x17b9         Code  Gb  DblMul.o [4]
+__aeabi_dsub                 0x144d         Code  Gb  DblAddSub.o [4]
+__aeabi_f2d                  0x3171         Code  Gb  FltToDbl.o [4]
+__aeabi_i2d                  0x12ad         Code  Gb  S32ToDbl.o [4]
+__aeabi_ldiv0                0x1b9d         Code  Gb  I64DivZer.o [5]
+__aeabi_memset               0x31b9         Code  Gb  ABImemset.o [5]
+__aeabi_ui2d                 0x179d         Code  Gb  U32ToDbl.o [4]
+__aeabi_uldivmod             0x1965         Code  Gb  I64DivMod.o [5]
+__cmain                      0x3bc9         Code  Gb  cmain.o [5]
+__dwrite                     0x3b89   0x1e  Code  Gb  dwrite.o [6]
+__exit                       0x1ba1   0x14  Code  Gb  exit.o [6]
+__iar_Fail_s                  0xf19   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr                  0xf91         Code  Gb  memchr.o [5]
+__iar_Memset                 0x31b9         Code  Gb  ABImemset.o [5]
+__iar_Memset_word            0x31c1         Code  Gb  ABImemset.o [5]
+__iar_Sto                    0x2405    0x4  Code  Lc  strto64.o [4]
+__iar_Sto64                  0x228d  0x140  Code  Gb  strto64.o [4]
+__iar_Stoflt                 0x2531  0x1a8  Code  Gb  iar_Stoflt.o [2]
+__iar_Stopfx                 0x240f  0x120  Code  Gb  iar_Stopfx.o [2]
+__iar_Stoul                  0x39e9    0x2  Code  Gb  iar_Stoulx.o [2]
+__iar_Stoulx                 0x38a5  0x13e  Code  Gb  iar_Stoulx.o [2]
+__iar_Stoxflt                0x26d9  0x1d8  Code  Gb  iar_Stoxflt.o [2]
+__iar_Stoxflt::digits        0x28b4   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Stoxflt::vals          0x28cc   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Strchr                  0xef9         Code  Gb  strchr.o [5]
+__iar_close_ttio             0x1bb5   0x2c  Code  Gb  iarttio.o [6]
+__iar_copy_init3              0xecf   0x2a  Code  Gb  copy_init3.o [5]
+__iar_data_init3             0x3ac9   0x28  Code  Gb  data_init.o [5]
+__iar_frexp                  0x106d         Code  Gb  frexp.o [4]
+__iar_frexpl                 0x106d         Code  Gb  frexp.o [4]
+__iar_get_ttio               0x1be1   0x4c  Code  Gb  iarttio.o [6]
+__iar_init_vfp               0x3af1         Code  Gb  fpinit_M.o [4]
+__iar_ldexp64                0x1139         Code  Gb  ldexp.o [4]
+__iar_lookup_ttioh           0x1c31    0x8  Code  Gb  XShttio.o [2]
+__iar_program_start          0x3bfd         Code  Gb  cstartup_M.o [5]
+__iar_scalbln64              0x1139         Code  Gb  ldexp.o [4]
+__iar_scalbn64               0x1139         Code  Gb  ldexp.o [4]
+__iar_sh_stdout              0x3ba7   0x20  Code  Gb  iarwstd.o [6]
+__iar_sh_write               0x3b13   0x22  Code  Gb  iarwrite.o [6]
+__iar_softfp___iar_frexp64
+                             0x1061         Code  Gb  frexp.o [4]
+__iar_softfp_frexp           0x1061         Code  Gb  frexp.o [4]
+__iar_softfp_frexpl          0x1061         Code  Gb  frexp.o [4]
+__iar_ttio_handles      0x2000'0010    0x8  Data  Lc  XShttio.o [2]
+__iar_unaligned_memcpy        0xfe9         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned_memcpy4
+                             0x1009         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned_memcpy8
+                             0x1009         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_vfp_atof               0x34f7    0x8  Code  Gb  math_wrappers64.o [4]
+__iar_zero_init3             0x3a91   0x38  Code  Gb  zero_init3.o [5]
+__low_level_init             0x3be7    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [5]
+__write                      0x3b79   0x10  Code  Gb  write.o [6]
+_call_main                   0x3bd5         Code  Gb  cmain.o [5]
+_exit                        0x3bf1         Code  Gb  cexit.o [5]
+abort                        0x1b95    0x6  Code  Gb  abort.o [2]
+arr                     0x2000'0000   0x10  Data  Gb  keypad.o [1]
+atof                         0x2409    0x6  Code  Gb  strto64.o [4]
+atoi                         0x39eb    0x2  Code  Gb  iar_Stoulx.o [2]
+calculator_init              0x3287  0x126  Code  Gb  calculator.o [1]
+delayMs                      0x2dc9   0x1a  Code  Gb  LCD.o [1]
+delayUs                      0x2de3   0x16  Code  Gb  LCD.o [1]
+digits                       0x3a20   0x28  Data  Lc  iar_Stoulx.o [2]
+exit                         0x3beb    0x4  Code  Gb  exit.o [2]
+g_pfnRAMVectors         0x2000'0400  0x26c  Data  Lc  interrupt.o [3]
+g_ppui32GPIOIntMapBlizzard
+                             0x1e6c   0xc0  Data  Lc  gpio.o [3]
+g_ppui32GPIOIntMapSnowflake
+                             0x1f2c   0xd8  Data  Lc  gpio.o [3]
+g_ppui32TimerIntMap          0x2c64   0x60  Data  Lc  timer.o [3]
+g_ppui32TimerIntMapSnowflake
+                             0x2cc4   0x40  Data  Lc  timer.o [3]
+g_pui32EnRegs                0x2090   0x14  Data  Lc  interrupt.o [3]
+g_pui32Xtals                 0x3068   0x6c  Data  Lc  sysctl.o [3]
+ldexp                        0x1139         Code  Gb  ldexp.o [4]
+ldexpl                       0x1139         Code  Gb  ldexp.o [4]
+main                         0x370d  0x198  Code  Gb  main.o [1]
+memchr                        0xf91         Code  Gb  memchr.o [5]
+memset                       0x311d   0x14  Code  Gb  memset.o [5]
+ndigs                        0x39f8   0x28  Data  Lc  iar_Stoulx.o [2]
+pause                        0x2931   0x6a  Code  Gb  stopwatch.o [1]
+pause::x                0x2000'066c    0x4  Data  Lc  stopwatch.o [1]
+perform_operation            0x3221   0x66  Code  Gb  calculator.o [1]
+pows                         0x3a48   0x48  Data  Lc  strto64.o [4]
+printf                       0x2ebd   0x28  Code  Gb  printf.o [2]
+putchar                      0x3b59   0x20  Code  Gb  putchar.o [2]
+scalbln                      0x1139         Code  Gb  ldexp.o [4]
+scalblnl                     0x1139         Code  Gb  ldexp.o [4]
+scalbn                       0x1139         Code  Gb  ldexp.o [4]
+scalbnl                      0x1139         Code  Gb  ldexp.o [4]
+scale                         0xde5   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'0670    0x4  Data  Lc  xfail_s.o [2]
+sprintf                      0x3131   0x40  Code  Gb  sprintf.o [2]
+stopwatch_init               0x299b  0x148  Code  Gb  stopwatch.o [1]
+strchr                        0xef9         Code  Gb  strchr.o [5]
+strlen                        0xf59         Code  Gb  strlen.o [5]
+strncat                      0x33c5   0x28  Code  Gb  strncat.o [2]
+timer_init                   0x35d1  0x10a  Code  Gb  timer.o [1]
+
+
+[1] = D:\CESS Semester 7\Introduction to Embedded Systems\IAR Lab Submissions\Embedded Project Final\Debug\Obj
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  15'216 bytes of readonly  code memory
+     488 bytes of readonly  data memory
+   5'748 bytes of readwrite data memory
+
+Errors: none
+Warnings: 1
